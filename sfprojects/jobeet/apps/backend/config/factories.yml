@@ -13,6 +13,11 @@ test:
     class: sfSessionTestStorage
     param:
       session_path: %SF_TEST_CACHE_DIR%/sessions
+  mailer:
+    param:
+      delivery_strategy: none
+    transport:
+      class:  Swift_MailTransport
 
   response:
     class: sfWebResponse

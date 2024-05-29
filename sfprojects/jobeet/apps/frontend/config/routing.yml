@@ -42,6 +42,10 @@ affiliate:
     model: JobeetAffiliate
     actions: [new, create]
     object_actions: { wait: get }
+
+job_search:
+  url:   /search
+  param: { module: job, action: search }
  
 # default rules
 homepage:

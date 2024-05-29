@@ -9,12 +9,11 @@ class JobeetJobTable extends Doctrine_Table
 {
   public function getForToken(array $parameters)
   {
-    $affiliate = Doctrine_Core::getTable('JobeetAffiliate') ->findOneByToken($parameters['token']);
-    if (!$affiliate || !$affiliate->getIsActive())
-    {
+    $affiliate = Doctrine_Core::getTable('JobeetAffiliate')->findOneByToken($parameters['token']);
+    if (!$affiliate || !$affiliate->getIsActive()) {
       throw new sfError404Exception(sprintf('Affiliate with token "%s" does not exist or is not activated.', $parameters['token']));
     }
- 
+
     return $affiliate->getActiveJobs();
   }
   public function getLatestPost()
@@ -22,7 +21,7 @@ class JobeetJobTable extends Doctrine_Table
     $q = Doctrine_Query::create()
       ->from('JobeetJob j');
     $this->addActiveJobsQuery($q);
- 
+
     return $q->fetchOne();
   }
   public function retrieveBackendJobList(Doctrine_Query $q)
@@ -83,4 +82,43 @@ class JobeetJobTable extends Doctrine_Table
 
     return $q->execute();
   }
+  public static function getLuceneIndex()
+  {
+    ProjectConfiguration::registerZend();
+
+    if (file_exists($index = self::getLuceneIndexFile())) {
+      return Zend_Search_Lucene::open($index);
+    } else {
+      return Zend_Search_Lucene::create($index);
+    }
+  }
+
+  public static function getLuceneIndexFile()
+  {
+    return sfConfig::get('sf_data_dir') . '/job.' . sfConfig::get('sf_environment') . '.index';
+  }
+
+  public function getForLuceneQuery($query)
+{
+  $hits = self::getLuceneIndex()->find($query);
+ 
+  $pks = array();
+  foreach ($hits as $hit)
+  {
+    $pks[] = $hit->pk;
+  }
+ 
+  if (empty($pks))
+  {
+    return array();
+  }
+ 
+  $q = $this->createQuery('j')
+    ->whereIn('j.id', $pks)
+    ->limit(20);
+ 
+  $q = $this->addActiveJobsQuery($q);
+ 
+  return $q->execute();
+}
 }

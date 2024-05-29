@@ -4,7 +4,7 @@
 <head>
   <title>
     <?php if (!include_slot('title')) : ?>
-      Jobeet - Your best job board
+      Jobeet
     <?php endif; ?>
   </title>
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -32,12 +32,13 @@
             <a href="<?php echo url_for('job/index') ?>" class="btn btn-primary">INICIO</a>
             <a href="<?php echo url_for('@job_new') ?>" class="btn btn-primary">Post a Job</a>
             <h2>Preguntar por trabajo</h2>
-            <div class="input-group mb-3">
-              <input type="text" name="keywords" id="search_keywords" class="form-control" placeholder="Enter some keywords (city, country, position, ...)" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Buscar</button>
+            <form action="<?php echo url_for('job_search') ?>" method="get">
+              <input type="text" name="query" value="<?php echo $sf_request->getParameter('query') ?>" id="search_keywords" />
+              <input type="submit" value="search" />
+              <div class="help">
+                Enter some keywords (city, country, position, ...)
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
