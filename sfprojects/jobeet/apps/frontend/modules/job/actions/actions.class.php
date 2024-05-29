@@ -13,8 +13,16 @@ class jobActions extends sfActions
   public function executeSearch(sfWebRequest $request)
   {
     $this->forwardUnless($query = $request->getParameter('query'), 'job', 'index');
- 
-    $this->jobs = Doctrine_Core::getTable('JobeetJob') ->getForLuceneQuery($query);
+
+    $this->jobs = Doctrine_Core::getTable('JobeetJob')->getForLuceneQuery($query);
+
+    if ($request->isXmlHttpRequest()) {
+      if ('*' == $query || !$this->jobs) {
+        return $this->renderText('No results.');
+      }
+
+      return $this->renderPartial('job/list', array('jobs' => $this->jobs));
+    }
   }
   public function executeIndex(sfWebRequest $request)
   {
@@ -24,7 +32,7 @@ class jobActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
     $this->job = $this->getRoute()->getObject();
- 
+
     $this->getUser()->addJobToHistory($this->job);
   }
 
@@ -83,16 +91,16 @@ class jobActions extends sfActions
   public function executeExtend(sfWebRequest $request)
   {
     $request->checkCSRFProtection();
-   
+
     $job = $this->getRoute()->getObject();
     $this->forward404Unless($job->extend());
-   
+
     $this->getUser()->setFlash('notice', sprintf('Your job validity has been extended until %s.', $job->getDateTimeObject('expires_at')->format('m/d/Y')));
-   
+
     $this->redirect($this->generateUrl('job_show_user', $job));
   }
 
-  
+
 
   protected function processForm(sfWebRequest $request, sfForm $form)
   {
