@@ -20,26 +20,28 @@
         </a>
       </h1>
     </div>
-<?php if ($sf_user->isAuthenticated()): ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div id="menu">
-        <ul>
-          <button type="button" class="btn btn-dark"><?php echo link_to('Jobs', 'jobeet_job') ?></button>
-          <button type="button" class="btn btn-dark"><?php echo link_to('Categories', 'jobeet_category') ?></button>
-          <button type="button" class="btn btn-dark"><?php echo link_to('Users', 'sf_guard_user') ?></button>
-          <button type="button" class="btn btn-dark"><?php echo link_to('Logout', 'sf_guard_signout') ?></button>
+    <?php if ($sf_user->isAuthenticated()) : ?>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div id="menu">
+          <ul>
+            <button type="button" class="btn btn-dark"><?php echo link_to('Jobs', 'jobeet_job') ?></button>
+            <button type="button" class="btn btn-dark"><?php echo link_to('Categories', 'jobeet_category') ?></button>
+            <button type="button" class="btn btn-dark"><?php echo link_to('Users', 'sf_guard_user') ?></button>
+            <button type="button" class="btn btn-dark"><?php echo link_to('Logout', 'sf_guard_signout') ?></button>
+          </ul>
+          <li>
+            <a href="<?php echo url_for('jobeet_affiliate') ?>">Affiliates<strong><?php echo Doctrine_Core::getTable('JobeetAffiliate')->countToBeActivated() ?></strong></a>
+          </li>
+        </div>
+      </nav>
 
-        </ul>
-      </div>
-</nav>
-
-<?php endif ?>
+    <?php endif ?>
     <div id="content">
       <?php echo $sf_content ?>
     </div>
 
     <div id="footer">
-        <img src="/images/symfony.png" alt="symfony framework" /></a>
+      <img src="/images/symfony.png" alt="symfony framework" /></a>
     </div>
   </div>
 </body>

@@ -38,4 +38,17 @@ class JobeetAffiliate extends BaseJobeetAffiliate
 	{
 		return $this->getUrl();
 	}
+	public function activate()
+	{
+	  $this->setIsActive(true);
+   
+	  return $this->save();
+	}
+   
+	public function deactivate()
+	{
+	  $this->setIsActive(false);
+   
+	  return $this->save();
+	}
 }
