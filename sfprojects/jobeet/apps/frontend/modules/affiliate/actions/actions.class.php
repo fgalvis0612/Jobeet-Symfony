@@ -11,11 +11,6 @@
 class affiliateActions extends sfActions
 {
 
-  public function executeNew(sfWebRequest $request)
-  {
-    $this->form = new JobeetAffiliateForm();
-  }
-
   public function executeCreate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));
@@ -25,6 +20,10 @@ class affiliateActions extends sfActions
     $this->processForm($request, $this->form);
 
     $this->setTemplate('new');
+  }
+  public function executeNew(sfWebRequest $request)
+  {
+    $this->form = new JobeetAffiliateForm();
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
