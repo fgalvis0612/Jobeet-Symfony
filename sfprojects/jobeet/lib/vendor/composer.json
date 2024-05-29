@@ -1,0 +1,10 @@
+{
+    "require": {
+        "facebook/graph-sdk": "^5.7",
+        "google/apiclient": "^2.7",
+        "clegginabox/pdf-merger": "dev-master",
+        "phpoffice/phpspreadsheet": "^1.16",
+        "mikehaertl/phpwkhtmltopdf": "^2.5",
+        "mike42/escpos-php": "^4.0"
+    }
+}

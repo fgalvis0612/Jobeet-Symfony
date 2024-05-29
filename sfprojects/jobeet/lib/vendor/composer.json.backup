@@ -1,0 +1,7 @@
+{
+    "require": {
+        "google/apiclient": "^2.0",
+        "mailjet/mailjet-apiv3-php": "^1.4",
+        "clegginabox/pdf-merger": "dev-master"
+    }
+}
