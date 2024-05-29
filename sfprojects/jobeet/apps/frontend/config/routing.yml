@@ -35,6 +35,13 @@ api_jobs:
   options: { model: JobeetJob, type: list, method: getForToken }
   requirements:
     sf_format: (?:xml|json|yaml)
+
+affiliate:
+  class:   sfDoctrineRouteCollection
+  options:
+    model: JobeetAffiliate
+    actions: [new, create]
+    object_actions: { wait: get }
  
 # default rules
 homepage:
