@@ -1,9 +1,3 @@
-
-
-JobeetCategory:
-  actAs: { Timestampable: ~ }
-  columns:
-    name: { type: string(255), notnull: true, unique: true }
  
 JobeetJob:
   actAs: { Timestampable: ~ }
@@ -51,9 +45,9 @@ JobeetCategoryAffiliate:
 JobeetCategory:
   actAs:
     Timestampable: ~
-    Sluggable:
+    I18n:
       fields: [name]
+      actAs:
+        Sluggable: { fields: [name], uniqueBy: [lang, name] }
   columns:
-    name:
-      type: string(255)
-      notnull:  true
+    name: { type: string(255), notnull: true }

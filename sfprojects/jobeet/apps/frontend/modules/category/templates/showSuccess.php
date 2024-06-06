@@ -32,7 +32,12 @@
   </ul>
 </nav>
 <div class="pagination justify-content-end">
-  <strong><?php echo $pager->getNbResults() ?></strong> jobs in this category
+  <?php echo format_number_choice(
+    '[0]No job in this category|[1]One job in this category|(1,+Inf]%count% jobs in this category',
+    array('%count%' => '<strong>' . count($pager) . '</strong>'),
+    count($pager)
+  )
+  ?>
 
   <?php if ($pager->haveToPaginate()) : ?>
     - page <strong><?php echo $pager->getPage() ?>/<?php echo $pager->getLastPage() ?></strong>
