@@ -8,10 +8,10 @@ $browser->loadData();
 $browser->
   info('1 - An affiliate can create an account')->
  
-  get('/affiliate/new')->
+  get('/en/affiliate/new')->
   click('Submit', array('jobeet_affiliate' => array(
     'url'                            => 'http://www.example.com/',
-    'email'                          => 'foo@example.com',
+    'email'                          => 'dsadsa@sadas.com',
     'jobeet_categories_list'         => array(Doctrine_Core::getTable('JobeetCategory')->findOneBySlug('programming')->getId()),
   )))->
   with('response')->isRedirected()->
@@ -20,7 +20,7 @@ $browser->
  
   info('2 - An affiliate must at least select one category')->
  
-  get('/affiliate/new')->
+  get('/en/affiliate/new')->
   click('Submit', array('jobeet_affiliate' => array(
     'url'   => 'http://www.example.com/',
     'email' => 'foo@example.com',

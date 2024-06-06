@@ -79,21 +79,26 @@
   <div id="footer" class="footer mt-auto py-3 bg-light">
     <div class="container text-center">
       <span class="symfony">
-        <img src="/images/symfony.png" alt="symfony framework" />
-        </a>
+        <img src="/legacy/images/jobeet-mini.png" />
+        powered by <a href="/">
+          <img src="/legacy/images/symfony.gif" alt="symfony framework" /></a>
       </span>
       <ul>
-        <a href="">About Jobeet</a>
-        <li class="feed">
-          <a href="<?php echo url_for('job', array('sf_format' => 'atom')) ?>">Full feed</a>
+        <li>
+          <a href=""><?php echo __('About Jobeet') ?></a>
         </li>
-        <a href="">Jobeet API</a>
+        <li class="feed">
+          <?php echo link_to(__('Full feed'), 'job', array('sf_format' => 'atom')) ?>
+        </li>
+        <li>
+          <a href=""><?php echo __('Jobeet API') ?></a>
+        </li>
         <li class="last">
-          <a href="<?php echo url_for('affiliate_new') ?>">Become an affiliate</a>
+          <?php echo link_to(__('Become an affiliate'), 'affiliate_new') ?>
         </li>
       </ul>
+      <?php include_component('language', 'language') ?>
     </div>
-  </div>
   </div>
 </body>
 
