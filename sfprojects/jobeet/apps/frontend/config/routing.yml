@@ -45,7 +45,7 @@ job_show_user:
     method_for_query: retrieveActiveJob
   param:   { module: job, action: show }
   requirements:
-    sf_culture: (?:fr|en)s
+    sf_culture: (?:fr|en)
     id:        \d+
     sf_method: get
     

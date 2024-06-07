@@ -4,7 +4,7 @@
   <?php foreach ($categories as $category) : ?>
 
     <div class="card">
-      <h2 class="card-header"><?php echo link_to($category, 'category', $category) ?>
+      <h2 class="card-header"> <?php echo __(link_to($category, 'category', $category))?>
 
         <div class="feed">
           <a href="<?php echo url_for('category', array('sf_subject' => $category, 'sf_format' => 'atom')) ?>">Feed</a>
