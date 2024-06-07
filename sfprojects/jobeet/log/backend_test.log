@@ -1,0 +1,321 @@
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 07 05:26:16 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM sf_guard_user - ()
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM jobeet_category_affiliate - ()
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM jobeet_job - ()
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM jobeet_affiliate - ()
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Mysql} exec : DELETE FROM jobeet_category - ()
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO sf_guard_user (algorithm, is_active, is_super_admin, email_address, username, salt, password, first_name, last_name, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (sha1, 1, 1, admin@example.com, admin, 511ea25f0a4644f71ce83990d015157a, 8e2dabf8189d463e6b448ef0eb9b02784ad1b9e9, Fabien, Potencier, 2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (1, http://www.sensio-labs.com/, fabien.potencier@example.com, sensio_labs, 2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (programming%, en, Programming)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (5, en, Programming, programming)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (5, 3)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_affiliate (is_active, url, email, token, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?) - (0, /, fabien.potencier@example.org, symfony, 2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (design%, en, Design)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (6, en, Design, design)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (6, 4)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_affiliate (category_id, affiliate_id) VALUES (?, ?) - (5, 4)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (manager%, en, Manager)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (7, en, Manager, manager)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category (created_at, updated_at) VALUES (?, ?) - (2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.slug LIKE ? AND j.lang = ? AND j.name = ?) - (administrator%, en, Administrator)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_category_translation (id, lang, name, slug) VALUES (?, ?, ?, ?) - (8, en, Administrator, administrator)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 100, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_100.sit
+, job_100, job@example.com, 2024-07-07 05:26:16, 2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 101, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_101.sit
+, job_101, job@example.com, 2024-07-07 05:26:16, 2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 102, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_102.sit
+, job_102, job@example.com, 2024-07-07 05:26:16, 2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 103, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_103.sit
+, job_103, job@example.com, 2024-07-07 05:26:16, 2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:16 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 104, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_104.sit
+, job_104, job@example.com, 2024-07-07 05:26:16, 2024-06-07 05:26:16, 2024-06-07 05:26:16)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 105, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_105.sit
+, job_105, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 106, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_106.sit
+, job_106, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 107, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_107.sit
+, job_107, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 108, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_108.sit
+, job_108, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 109, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_109.sit
+, job_109, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 110, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_110.sit
+, job_110, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 111, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_111.sit
+, job_111, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 112, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_112.sit
+, job_112, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 113, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_113.sit
+, job_113, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 114, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_114.sit
+, job_114, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 115, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_115.sit
+, job_115, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 116, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_116.sit
+, job_116, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 117, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_117.sit
+, job_117, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:17 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 118, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_118.sit
+, job_118, job@example.com, 2024-07-07 05:26:17, 2024-06-07 05:26:17, 2024-06-07 05:26:17)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 119, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_119.sit
+, job_119, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 120, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_120.sit
+, job_120, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 121, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_121.sit
+, job_121, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 122, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_122.sit
+, job_122, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 123, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_123.sit
+, job_123, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 124, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_124.sit
+, job_124, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 125, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_125.sit
+, job_125, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 126, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_126.sit
+, job_126, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 127, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_127.sit
+, job_127, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 128, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_128.sit
+, job_128, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:18 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 129, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_129.sit
+, job_129, job@example.com, 2024-07-07 05:26:18, 2024-06-07 05:26:18, 2024-06-07 05:26:18)
+Jun 07 05:26:19 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO jobeet_job (is_public, is_activated, category_id, company, position, location, description, how_to_apply, token, email, expires_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (1, 1, 5, Company 130, Web Developer, Paris, France, Lorem ipsum dolor sit amet, consectetur adipisicing elit., Send your resume to lorem.ipsum [at] company_130.sit
+, job_130, job@example.com, 2024-07-07 05:26:19, 2024-06-07 05:26:19, 2024-06-07 05:26:19)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Match route "jobeet_affiliate" (/affiliate.:sf_format) for /affiliate with parameters array (  'module' => 'affiliate',  'action' => 'index',  'sf_format' => 'html',)
+Jun 07 05:26:19 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 07 05:26:19 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 07 05:26:19 symfony [info] {affiliateActions} Call "affiliateActions->executeIndex()"
+Jun 07 05:26:19 symfony [info] {Doctrine_Connection_Statement} execute : SELECT COUNT(*) AS num_results FROM jobeet_affiliate j WHERE j.is_active = ? - (0)
+Jun 07 05:26:19 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/indexSuccess.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_assets.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_flashes.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list_header.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_filters.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_filters_field.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_filters_field.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_filters_field.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list_th_tabular.php"
+Jun 07 05:26:19 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:19 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:19 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:19 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:19 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:19 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:19 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:19 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:19 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.url AS j__url, j.email AS j__email, j.token AS j__token, j.is_active AS j__is_active, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_affiliate j WHERE (j.is_active = ?) ORDER BY j.is_active asc LIMIT 20 - (0)
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list_td_batch_actions.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list_td_tabular.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list_field_boolean.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list_td_actions.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list_batch_actions.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list_actions.php"
+Jun 07 05:26:19 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoAffiliate/templates/_list_footer.php"
+Jun 07 05:26:19 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\development\sfprojects\jobeet\apps\backend\templates/layout.php"
+Jun 07 05:26:19 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\apps\backend\templates/layout.php"
+Jun 07 05:26:19 symfony [info] {sfWebResponse} Send content (6466 o)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 07 05:26:19 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /category/index with parameters array (  'module' => 'category',  'action' => 'index',)
+Jun 07 05:26:20 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 07 05:26:20 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 07 05:26:20 symfony [info] {categoryActions} Call "categoryActions->executeIndex()"
+Jun 07 05:26:20 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 05:26:20 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 05:26:20 symfony [info] {Doctrine_Connection_Mysql} query : SELECT COUNT(*) AS num_results FROM jobeet_category j - ()
+Jun 07 05:26:20 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/indexSuccess.php"
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_assets.php"
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_flashes.php"
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list_header.php"
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list.php"
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list_th_tabular.php"
+Jun 07 05:26:20 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:20 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:20 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:20 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:20 symfony [info] {Doctrine_Connection_Mysql} query : SELECT j.id AS j__id, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_category j LIMIT 20 - ()
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list_td_tabular.php"
+Jun 07 05:26:20 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.id IN (?)) - (5)
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list_td_tabular.php"
+Jun 07 05:26:20 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.id IN (?)) - (6)
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list_td_tabular.php"
+Jun 07 05:26:20 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.id IN (?)) - (7)
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list_td_tabular.php"
+Jun 07 05:26:20 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.id IN (?)) - (8)
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list_batch_actions.php"
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list_actions.php"
+Jun 07 05:26:20 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoCategory/templates/_list_footer.php"
+Jun 07 05:26:20 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\development\sfprojects\jobeet\apps\backend\templates/layout.php"
+Jun 07 05:26:20 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\apps\backend\templates/layout.php"
+Jun 07 05:26:20 symfony [info] {sfWebResponse} Send content (3960 o)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Jun 07 05:26:20 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /job/index with parameters array (  'module' => 'job',  'action' => 'index',)
+Jun 07 05:26:21 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Jun 07 05:26:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jun 07 05:26:21 symfony [info] {jobActions} Call "jobActions->executeIndex()"
+Jun 07 05:26:21 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 05:26:21 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Jun 07 05:26:21 symfony [info] {Doctrine_Connection_Mysql} query : SELECT COUNT(*) AS num_results FROM (SELECT j.id FROM jobeet_job j LEFT JOIN jobeet_category j2 ON j.category_id = j2.id GROUP BY j.id) dctrn_count_query - ()
+Jun 07 05:26:21 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/indexSuccess.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_assets.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_flashes.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_header.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_filters.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_filters_field.php"
+Jun 07 05:26:21 symfony [info] {Doctrine_Connection_Mysql} query : SELECT j.id AS j__id, j.created_at AS j__created_at, j.updated_at AS j__updated_at FROM jobeet_category j - ()
+Jun 07 05:26:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.id IN (?)) - (5)
+Jun 07 05:26:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.id IN (?)) - (6)
+Jun 07 05:26:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.id IN (?)) - (7)
+Jun 07 05:26:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT j.id AS j__id, j.name AS j__name, j.lang AS j__lang, j.slug AS j__slug FROM jobeet_category_translation j WHERE (j.id IN (?)) - (8)
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_filters_field.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_filters_field.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_filters_field.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_filters_field.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_filters_field.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_filters_field.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_filters_field.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_th_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_th_tabular.php"
+Jun 07 05:26:21 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Set slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {main} Get slot "sf_admin.current_header"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_pagination.php"
+Jun 07 05:26:21 symfony [info] {Doctrine_Connection_Mysql} query : SELECT j.id AS j__id, j.category_id AS j__category_id, j.type AS j__type, j.company AS j__company, j.logo AS j__logo, j.url AS j__url, j.position AS j__position, j.location AS j__location, j.description AS j__description, j.how_to_apply AS j__how_to_apply, j.token AS j__token, j.is_public AS j__is_public, j.is_activated AS j__is_activated, j.email AS j__email, j.expires_at AS j__expires_at, j.created_at AS j__created_at, j.updated_at AS j__updated_at, j2.id AS j2__id, j2.created_at AS j2__created_at, j2.updated_at AS j2__updated_at FROM jobeet_job j LEFT JOIN jobeet_category j2 ON j.category_id = j2.id ORDER BY j.expires_at desc LIMIT 10 - ()
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_stacked.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_field_boolean.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_td_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_batch_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_actions.php"
+Jun 07 05:26:21 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\cache\backend\test\modules/autoJob/templates/_list_footer.php"
+Jun 07 05:26:21 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\development\sfprojects\jobeet\apps\backend\templates/layout.php"
+Jun 07 05:26:21 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\development\sfprojects\jobeet\apps\backend\templates/layout.php"
+Jun 07 05:26:21 symfony [info] {sfWebResponse} Send content (24426 o)
